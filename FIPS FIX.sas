@@ -13,14 +13,18 @@ FIPS County and a seperate variable for FIPS STATE but do not leave leading zero
 data fips_fix; /*Chose whatever name you please*/
 	set &set;
 	drop single;
+
 /*For No Leading Zero States*/
 	length state_code $ 2;
 	state_code = "  ";
 		/* State FIPS with both digits*/
-	if &state ge 10 then state_code = &state;
-	length single $ 2;
-	single = "  "; 	
 
+	if &state ge 10 then state_code = &state;
+/**IF YOU ARE NOT USING THE TWO DIGIT STATE DELETE THE ABOVE LINE AND SUBSTITUTE THE FOLLOWING:
+	state_code = &state;
+***************************************************************************************/
+	length single $ 2;
+	single = "  "
 		if &state lt 10 then single = &state;
 		if state_code = '' then state_code = put(input(single, best2.),z2.);
 		single ="";
