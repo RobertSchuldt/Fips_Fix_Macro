@@ -24,7 +24,7 @@ data fips_fix; /*Chose whatever name you please*/
 	state_code = &state;
 ***************************************************************************************/
 	length single $ 2;
-	single = "  "
+	single = "  ";
 		if &state lt 10 then single = &state;
 		if state_code = '' then state_code = put(input(single, best2.),z2.);
 		single ="";
