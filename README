@@ -1,0 +1,14 @@
+54 lines (40 sloc)  2.11 KB
+/*********************************************************************************************************/
+/* This is a macro to fix the problems of FIPS codes from some data sources that do not have all 5 digits
+this macro program can easily be adjusted to fit with different cases of the problems you may encounter 
+with minor adjustments. This mainly focused for governmental data sets that tend to create a variable for 
+FIPS County and a seperate variable for FIPS STATE but do not leave leading zeros or store them as numbers
+
+There are SAS Call Routines that I did not know about when I created this fix. However, this was a good exercise
+in developing a macro solution to problems that I encountered across data sets. 
+
+
+*/
+/
+/* Author: Robert F. Schuldt *********** Email:RSchuldt@uams.edu 1/2019 ***********************************/
